@@ -1,0 +1,310 @@
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body{
+    background-color: rgb(32, 32, 105);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(14, 13, 13);
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    margin: 32px auto;
+    padding: 16px;
+    min-height: 100vh;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card{
+    position: relative;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border-radius: 4%;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: #fff;
+  }
+
+  .card:hover
+  {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+  }
+
+  .maincard{
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 1%;
+    -webkit-box-shadow: -7px 7px 25px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 7px 25px 1px rgba(0,0,0,0.75);
+    box-shadow: -7px 7px 25px 1px rgba(0,0,0,0.75);
+    padding: 30px;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  svg
+  {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 1000;
+  }
+
+  svg circle
+  {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #e6e5e5;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px,5px);    
+  }
+  svg circle:nth-child(2)
+  {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+  }
+
+  .card:nth-child(1) svg circle:nth-child(2)
+  {
+    stroke: #1b3c83;
+  }
+  .card:nth-child(2) svg circle:nth-child(2)
+  {
+    stroke: #1b3c83;
+  }
+  .card:nth-child(3) svg circle:nth-child(2)
+  {
+    stroke: #1b3c83;
+  }
+  .card:nth-child(4) svg circle:nth-child(2)
+  {
+    stroke: #1b3c83;
+    
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: 100vh;
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="160"
+    alt="iPASSED logo"
+    src = '/assets/images/Logo.PNG'
+  />
+
+</div>
+
+<div class="content" role="main">
+  <h2>Seja Bem vindo!</h2>
+  <p>Aqui você escontrará as ferramentas necessárias para construir o seu futuro.</p>
+  <div class="maincard">
+    <div class="card">
+      <div>
+        <div class="percent">
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+        </div>
+        <div class="number">
+          <h2>85 <span>%</span></h2>
+        </div>
+        <div><h3>Português</h3></div>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <div class="percent">
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+        </div>
+        <div class="number">
+          <h2>80 <span>%</span></h2>
+        </div>
+        <div><h3>Matemática</h3></div>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <div class="percent">
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+        </div>
+        <div class="number">
+          <h2>20 <span>%</span></h2>
+        </div>
+        <div><h3>Física</h3></div>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <div class="percent">
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+        </div>
+        <div class="number">
+          <h2>30 <span>%</span></h2>
+        </div>
+        <div><h3>Biologia</h3></div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+    
+  </footer>
+</div>
+<router-outlet></router-outlet>
